@@ -1,0 +1,26 @@
+<script>
+//verify for netscape/mozilla
+
+var isNS4 = (navigator.appName=="Netscape")?1:0;
+</script>
+<script>
+
+  function sumItems(){
+    function getVal(item){
+   if($x(item).value != "")
+     return parseFloat($x(item).value);
+   else
+     return 0;
+    }
+    $x('P1_TOTAL_RN').value = 
+  getVal('P1_SUBS_ACTUAL_RN') + getVal('P1_TEMP_ACTUAL_RN') ;
+ $x('P1_TOTAL_NA').value = 
+  getVal('P1_SUBS_ACTUAL_NA') + getVal('P1_TEMP_ACTUAL_NA') ;
+ $x('P1_TOTAL_TNA').value = 
+  getVal('P1_SUBS_ACTUAL_TNA') + getVal('P1_TEMP_ACTUAL_TNA') ;
+ $x('P1_TOTAL_HCA').value = 
+  getVal('P1_SUBS_ACTUAL_HCA') + getVal('P1_TEMP_ACTUAL_HCA') ;
+
+  }
+
+</script>
