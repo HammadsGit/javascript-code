@@ -1,0 +1,22 @@
+function fn_get_lotno_expirydate(pThis){
+
+    // populate lot no
+    
+    var vRow = pThis.id.substr(pThis.id.indexOf('_')+1);
+    var n = (document.getElementById('f04_'+vRow).value).indexOf(":",2);
+    var n1 = (document.getElementById('f04_'+vRow).value).indexOf(":",n+1);
+    var n2 = (document.getElementById('f04_'+vRow).value).indexOf(":",n1+1);
+   
+    document.getElementById('f05_'+vRow).value=
+       (((document.getElementById('f04_'+vRow).value).substr(n2+1,20).replace(/^\|+|\|+$/g,'')).split('|')[0]);
+    
+    // Populate expiry date   
+    
+    var n3 = (document.getElementById('f04_'+vRow).value).indexOf("|",2);
+    var n4 = (document.getElementById('f04_'+vRow).value).indexOf("|",n3+1);
+    var n5 = (document.getElementById('f04_'+vRow).value).indexOf("|",n4+1);
+    
+    document.getElementById('f06_'+vRow).value=
+        (document.getElementById('f04_'+vRow).value).substr(n5+1,12);
+       
+}
